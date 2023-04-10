@@ -16,7 +16,9 @@ const app = express()
 const port = process.env.PORT || 8000;
 const corsOptions = {
     origin: true,
-    credentials: true 
+    credentials: true,
+    allowedHeaders : ['Content-Type','Authorisation'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }
 // connect to db
 mongoose.set("strictQuery", false);

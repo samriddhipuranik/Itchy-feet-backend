@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import Stripe from "stripe";
-import router from "../routes/bookings.js";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // create a booking
