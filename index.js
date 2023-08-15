@@ -15,7 +15,7 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT || 8000;
 const corsOptions = {
-    origin: ['https://itchyfeet.vercel.app'],
+    origin: true,
     credentials: true,
     allowedHeaders : ['Content-Type','Authorisation'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
