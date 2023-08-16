@@ -6,8 +6,6 @@ import jwt from 'jsonwebtoken';
 export const register = async(req, res) => {
     try{
         // password length and special char
-               
-        
 
         // hashing password
         const salt = bcrypt.genSaltSync(10);
