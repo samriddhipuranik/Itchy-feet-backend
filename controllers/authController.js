@@ -7,9 +7,11 @@ export const register = async(req, res) => {
     try{
         // password length and special char
         if (password.length < 5 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            const errorMessage = 'Password should be at least 5 characters long and contain special characters';
+            window.alert(errorMessage);
             return res.status(400).json({
                 success: false,
-                message: 'Password should be at least 5 characters long and contain special characters'
+                message: errorMessage
             });
         }
         // hashing password
