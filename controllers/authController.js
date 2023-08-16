@@ -5,7 +5,13 @@ import jwt from 'jsonwebtoken';
 // user registation
 export const register = async(req, res) => {
     try{
-
+        // password length and special char
+        if (password.length < 5 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            return res.status(400).json({
+                success: false,
+                message: 'Password should be at least 5 characters long and contain special characters'
+            });
+        }
         // hashing password
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt)
